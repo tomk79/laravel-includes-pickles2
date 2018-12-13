@@ -100,3 +100,53 @@ Laravel ももともと `extra` を設定しているようなので、ここに
 ```
 
 
+### Pickles 2 のパブリッシュ先のディレクトリを設定する
+
+今回の目的は、 Laravel と同居することでした。 Laravel の `/public` には、静的なファイルを置くことができます。
+
+従って、 Pickles 2 からパブリッシュされる静的なファイルが `/public` に出力されるように設定します。
+
+```php
+/** パブリッシュ先ディレクトリパス */
+$conf->path_publish_dir = '../public/';
+```
+
+ただし、もとからある Laravel 関連のファイルを上書きしたり、消してしまうと困ります。
+これらのファイルを Pickles 2 が変更しないように、除外ファイル指定を設定しておきます。
+
+```php
+	$conf->paths_proc_type = array(
+		'/.htaccess' => 'ignore' ,
+		'/.px_execute.php' => 'ignore' ,
+		'/px-files/*' => 'ignore' ,
+		'*.ignore/*' => 'ignore' ,
+		'*.ignore.*' => 'ignore' ,
+		'/composer.json' => 'ignore' ,
+		'/composer.lock' => 'ignore' ,
+		'/README.md' => 'ignore' ,
+		'/vendor/*' => 'ignore' ,
+		'*/.DS_Store' => 'ignore' ,
+		'*/Thumbs.db' => 'ignore' ,
+		'*/.svn/*' => 'ignore' ,
+		'*/.git/*' => 'ignore' ,
+		'*/.gitignore' => 'ignore' ,
+
+		// ↓これらは Laravel が管理するファイル
+		'/css/*' => 'ignore',
+		'/js/*' => 'ignore',
+		'/svg/*' => 'ignore',
+		'/favicon.ico' => 'ignore',
+		'/index.php' => 'ignore',
+		'/robots.txt' => 'ignore',
+		'/web.config' => 'ignore',
+
+		'*.html' => 'html' ,
+		'*.htm' => 'html' ,
+		'*.css' => 'css' ,
+		'*.js' => 'js' ,
+		'*.png' => 'pass' ,
+		'*.jpg' => 'pass' ,
+		'*.gif' => 'pass' ,
+		'*.svg' => 'pass' ,
+	);
+```

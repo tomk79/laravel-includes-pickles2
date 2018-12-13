@@ -42,7 +42,7 @@ return call_user_func( function(){
 	$conf->path_top = '/';
 
 	/** パブリッシュ先ディレクトリパス */
-	$conf->path_publish_dir = './px-files/dist/';
+	$conf->path_publish_dir = '../public/';
 
 	/** 公開キャッシュディレクトリ */
 	$conf->public_cache_dir = '/common/px_resources/';
@@ -136,6 +136,15 @@ return call_user_func( function(){
 		'*/.svn/*' => 'ignore' ,
 		'*/.git/*' => 'ignore' ,
 		'*/.gitignore' => 'ignore' ,
+
+		// ↓これらは Laravel が管理するファイル
+		'/css/*' => 'ignore',
+		'/js/*' => 'ignore',
+		'/svg/*' => 'ignore',
+		'/favicon.ico' => 'ignore',
+		'/index.php' => 'ignore',
+		'/robots.txt' => 'ignore',
+		'/web.config' => 'ignore',
 
 		'*.html' => 'html' ,
 		'*.htm' => 'html' ,
