@@ -63,6 +63,7 @@ new picklesFramework2\pickles('./px-files/');
 次のファイルはそのままコピーして設置します。
 
 - .htaccess
+- .gitignore
 - common/*
 - px-files/*
 - sample_pages/*
@@ -97,3 +98,5 @@ Laravel ももともと `extra` を設定しているようなので、ここに
 
 }
 ```
+
+
