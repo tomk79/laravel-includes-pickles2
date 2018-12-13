@@ -59,3 +59,11 @@ chdir(__DIR__);
 @require_once( '../vendor/autoload.php' );
 new picklesFramework2\pickles('./px-files/');
 ```
+
+次のファイルはそのままコピーして設置します。
+
+- .htaccess
+- common/*
+- px-files/*
+- sample_pages/*
+- index.html
