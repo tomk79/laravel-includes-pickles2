@@ -29,7 +29,7 @@ $ composer create-project --prefer-dist laravel/laravel
 
 ### composer.json に Pickles 2 の関連パッケージを追加していく
 
-Pickles 2 の[標準的な雛形パッケージ](https://github.com/pickles2/preset-get-start-pickles2)の composer.json を参考に、 Pickles 2 を動かすために必要なパッケージをインストールしていきます。
+Pickles 2 の標準的な雛形パッケージ [Get Start Pickles 2 !](https://github.com/pickles2/preset-get-start-pickles2)の composer.json を参考に、 Pickles 2 を動かすために必要なパッケージをインストールしていきます。
 
 ```
 $ composer require broccoli-html-editor/broccoli-module-fess
@@ -42,4 +42,20 @@ $ composer require pickles2/px2-px2dthelper
 $ composer require pickles2/px2-remove-attr
 $ composer require pickles2/px2-sitemapexcel
 $ composer require pickles2/px2-publish-ex
+```
+
+
+### Pickles 2 のソース(プレビュー)環境を構築していく
+
+Pickles 2 のソースは、 `/pickles2_src/*` に置くことにします。このディレクトリをドキュメントルートとします。
+
+実行スクリプト `/pickles2_src/.px_execute.php` を設置します。
+
+こちらも Get Start Pickles 2 ! からそのまま持ってきますが、 Composer が作成する vendor フォルダが1つ上の階層に置かれることになるので、 そこだけ書き換えています。
+
+```php
+<?php
+chdir(__DIR__);
+@require_once( '../vendor/autoload.php' );
+new picklesFramework2\pickles('./px-files/');
 ```
