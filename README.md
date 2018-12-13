@@ -67,3 +67,33 @@ new picklesFramework2\pickles('./px-files/');
 - px-files/*
 - sample_pages/*
 - index.html
+
+
+### composer.json に px2package 情報を追加する
+
+今回、`/pickles2_src` ディレクトリに Pickles 2 をセットアップするので、 `path` と `path_homedir` にこのディレクトリパスを設定しておきます。
+
+Laravel ももともと `extra` を設定しているようなので、ここに並べて書きます。
+
+```json
+{
+    "name": "tomk79/laravel-includes-pickles2",
+
+    ...中略
+
+    "extra": {
+        "laravel": {
+            "dont-discover": []
+        },
+        "px2package": {
+            "name": "Laravel includes Pickles 2",
+            "type": "project",
+            "path": "pickles2_src/.px_execute.php",
+            "path_homedir": "pickles2_src/px-files/"
+        }
+    },
+
+    ...中略
+
+}
+```

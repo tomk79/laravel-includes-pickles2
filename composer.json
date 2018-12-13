@@ -1,7 +1,7 @@
 {
-    "name": "laravel/laravel",
+    "name": "tomk79/laravel-includes-pickles2",
     "type": "project",
-    "description": "The Laravel Framework.",
+    "description": "Laravel 5.7 の中に Pickles 2 の静的なHTMLコンテンツを同居させるサンプルです。",
     "keywords": [
         "framework",
         "laravel"
@@ -39,6 +39,12 @@
     "extra": {
         "laravel": {
             "dont-discover": []
+        },
+        "px2package": {
+            "name": "Laravel includes Pickles 2",
+            "type": "project",
+            "path": "pickles2_src/.px_execute.php",
+            "path_homedir": "pickles2_src/px-files/"
         }
     },
     "autoload": {
