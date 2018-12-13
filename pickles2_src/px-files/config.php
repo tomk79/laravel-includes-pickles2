@@ -145,6 +145,7 @@ return call_user_func( function(){
 		'/index.php' => 'ignore',
 		'/robots.txt' => 'ignore',
 		'/web.config' => 'ignore',
+		'/index.html' => 'ignore',
 
 		'*.html' => 'html' ,
 		'*.htm' => 'html' ,

@@ -139,6 +139,7 @@ $conf->path_publish_dir = '../public/';
 		'/index.php' => 'ignore',
 		'/robots.txt' => 'ignore',
 		'/web.config' => 'ignore',
+		'/index.html' => 'ignore',
 
 		'*.html' => 'html' ,
 		'*.htm' => 'html' ,
